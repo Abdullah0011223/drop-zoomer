@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { IconType } from "react-icons";
 import { BiUser, BiVideo, BiDollar, BiSupport } from "react-icons/bi";
@@ -13,29 +14,26 @@ const features = [
 
 export default function Features() {
   const [show, setShow] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setShow(true); // Sirf jab scroll neeche ho tab animation trigger ho
+      if (window.scrollY > 100) {
+        setShow(true);
       }
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <section className="py-16 text-center">
+    <section className="py-16 text-center px-4 sm:px-6 lg:px-8">
       <h3 className="text-teal-500 font-semibold text-lg">Features</h3>
-      <h2 className="text-3xl font-bold mt-2">One Platform Many Course</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mt-2">One Platform Many Courses</h2>
 
       {/* Features Grid with Scroll-Down Animation */}
       <motion.div
-        className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6"
+        className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         initial={{ opacity: 0, y: 50 }}
         animate={show ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
@@ -45,7 +43,7 @@ export default function Features() {
           return (
             <motion.div
               key={feature.id}
-              className="bg-white hover:border-teal-700 rounded-xl p-6 relative text-center border hover:cursor-pointer border-gray-200"
+              className="bg-white hover:border-teal-700 rounded-xl p-6 relative text-center border border-gray-200 transition-transform duration-300 hover:scale-105 shadow-md"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={show ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: parseInt(feature.id) * 0.1 }}

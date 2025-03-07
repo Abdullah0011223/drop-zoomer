@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { FaLightbulb, FaClipboardList } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -25,15 +26,15 @@ export default function AboutUs() {
   return (
     <motion.section
       ref={aboutRef}
-      className="py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12"
+      className="py-12 px-4 sm:px-8 lg:px-20 flex flex-col lg:flex-row items-center gap-10"
       initial={{ opacity: 0, y: 50 }}
       animate={show ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Left Side - Images */}
-      <div className="relative flex flex-col gap-6">
+      <div className="relative flex flex-col sm:flex-row lg:flex-col gap-6 w-full lg:w-auto">
         {/* First Image */}
-        <div className="relative w-72 h-72 rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full sm:w-1/2 lg:w-72 h-56 sm:h-64 lg:h-72 rounded-xl overflow-hidden shadow-lg">
           <img
             src="/images/about1.jpg"
             alt="Student Writing"
@@ -42,7 +43,7 @@ export default function AboutUs() {
         </div>
 
         {/* Second Image */}
-        <div className="relative w-72 h-72 rounded-xl overflow-hidden shadow-lg self-end">
+        <div className="relative w-full sm:w-1/2 lg:w-72 h-56 sm:h-64 lg:h-72 rounded-xl overflow-hidden shadow-lg self-end">
           <img
             src="/images/about2.jpg"
             alt="Group Study"
@@ -52,10 +53,10 @@ export default function AboutUs() {
       </div>
 
       {/* Right Side - Text Content */}
-      <div className="max-w-lg">
-        <h3 className="text-green-600 font-semibold">About Us Education</h3>
-        <h2 className="text-3xl font-bold mt-2">
-          Go Your Skill in Next Level
+      <div className="max-w-2xl text-center lg:text-left">
+        <h3 className="text-green-600 font-semibold text-lg">About Us Education</h3>
+        <h2 className="text-2xl sm:text-3xl font-bold mt-2">
+          Go Your Skill to the Next Level
         </h2>
         <p className="text-gray-600 mt-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
@@ -64,22 +65,22 @@ export default function AboutUs() {
         </p>
 
         {/* Success Mission Section */}
-        <div className="mt-6 space-y-4">
-          <div className="flex items-start gap-4">
+        <div className="mt-6 space-y-6">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
             <FaLightbulb size={30} color="#3b82f6" />
             <div>
               <h3 className="font-bold text-lg">Our Success Mission</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm sm:text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
             <FaClipboardList size={30} color="#3b82f6" />
             <div>
               <h3 className="font-bold text-lg">Our Success Vision</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm sm:text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>

@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { FaUserGraduate, FaBookOpen } from "react-icons/fa";
@@ -13,7 +14,7 @@ export default function Hero() {
       (entries) => {
         if (entries[0].isIntersecting) {
           setShow(true);
-          observer.disconnect(); // Animation sirf ek baar chalane ke liye
+          observer.disconnect();
         }
       },
       { threshold: 0.2 }
@@ -26,32 +27,32 @@ export default function Hero() {
   return (
     <motion.section
       ref={heroRef}
-      className="flex items-center justify-between px-16 py-20 bg-white relative"
+      className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20 bg-white relative"
       initial={{ opacity: 0, y: 50 }}
       animate={show ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Left Content */}
-      <div className="w-1/2">
+      <div className="md:w-1/2 text-center md:text-left">
         <h3 className="text-lg text-gray-500">Online E-Learning Courses</h3>
-        <h1 className="text-6xl font-bold mt-4">
+        <h1 className="text-4xl md:text-6xl font-bold mt-4">
           <span className="text-teal-500">Creating</span> a Better Future through Education
         </h1>
         <p className="text-gray-500 mt-4 text-lg">
-          It is a long established fact that a reader gets distracted by readable content.
+          It is a long-established fact that a reader gets distracted by readable content.
         </p>
-        <button className="mt-6 hover:cursor-pointer hover:bg-teal-300 hover:text-white hover:border-teal-500 bg-teal-500 text-black px-6 py-3 rounded-full text-lg font-semibold">
+        <button className="mt-6 bg-teal-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-teal-600 transition">
           All Courses
         </button>
         
         {/* Happy Students */}
-        <div className="flex items-center mt-6 space-x-3">
+        <div className="flex items-center justify-center md:justify-start mt-6 space-x-3">
           <div className="flex -space-x-2">
             <Image
               src="/images/rev-img.png"
               alt="User"
-              width={100}
-              height={60}
+              width={50}
+              height={50}
               className="rounded-full border-2 border-white"
             />
           </div>
@@ -60,18 +61,18 @@ export default function Hero() {
       </div>
       
       {/* Right Image Section */}
-      <div className="relative w-1/2">
+      <div className="relative md:w-1/2 mt-10 md:mt-0 flex justify-center">
         <Image
           src="/images/hero.svg"
           alt="Classroom"
-          width={800}
-          height={900}
-          className="rounded-3xl"
+          width={600}
+          height={600}
+          className="rounded-3xl w-full max-w-sm md:max-w-lg"
         />
         
         {/* Overlay Card 1 */}
         <motion.div
-          className="absolute text-green-700 top-10 left-10 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
+          className="absolute text-green-700 top-10 left-5 md:left-10 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={show ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -83,13 +84,13 @@ export default function Hero() {
 
         {/* Overlay Card 2 */}
         <motion.div
-          className="text-green-700 absolute right-30 top-140 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
+          className="absolute text-green-700 right-5 md:right-10 bottom-10 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={show ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <FaBookOpen />
-          <h2 className="text-2xl font-bold">529+</h2>
+          <h2 className="text-2xl text-green-700 font-bold">529+</h2>
           <p className="text-green-700 text-sm">Total Courses</p>
         </motion.div>
       </div>
