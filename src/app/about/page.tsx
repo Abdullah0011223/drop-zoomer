@@ -11,7 +11,7 @@ export default function Banner() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 flex items-center justify-center text-center px-4">
+      <div className="relative w-full min-h-[50vh] flex items-center justify-center text-center px-4">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image

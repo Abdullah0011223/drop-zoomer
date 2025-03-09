@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Search, ArrowUp } from "lucide-react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-export default function Blog() {
+export default function Standardblog() {
   const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {

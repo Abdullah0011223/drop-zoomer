@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Search, ArrowUp } from "lucide-react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Comment from "../components/comment";
+import CommentForm from "../components/commentwriter";
 
-export default function Blog() {
+export default function Blogdetail() {
   const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {
@@ -33,9 +35,9 @@ export default function Blog() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-teal-500/80 to-blue-500/80"></div>
         <div className="relative z-10 text-white w-full max-w-2xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">Standard Blog</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">Blog Details</h1>
           <p className="mt-2 text-sm sm:text-base md:text-lg">
-            <Link href="/" className="text-blue-300 hover:underline">Home</Link> &raquo; Standard Blog
+            <Link href="/" className="text-blue-300 hover:underline">Home</Link> &raquo; Blog Details
           </p>
         </div>
       </div>
@@ -43,32 +45,42 @@ export default function Blog() {
       {/* Blog Layout */}
       <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 space-y-10">
-          {[1, 2].map((post) => (
-            <div key={post} className="relative">
-              <Image
-                src={`/images/blog${post}.jpg`}
-                width={800}
-                height={450}
-                alt="Blog Image"
-                className="rounded-lg w-full"
-                quality={100}
-              />
-              <span className="absolute bottom-4 right-4 bg-green-600 text-white text-sm px-3 py-1 rounded-full">
-                eLearning
-              </span>
-              <p className="text-gray-500 mt-4">📅 {post === 1 ? "27 Jan, 2024" : "15 Feb, 2024"}</p>
-              <h1 className="mt-5 font-bold text-2xl md:text-3xl hover:text-teal-400 cursor-pointer">
-                {post === 1 ? "A Student Learning With Online Program On Computer." : "Enhancing Digital Skills Through Online Courses."}
-              </h1>
-              <p className="mt-5 font-mono text-lg md:text-xl text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus eget dolor non condimentum.
-                Mauris ac augue eu ex elementum dictum Quisque fermentum augue.
-              </p>
-              <button className="font-semibold text-black mt-4 text-lg md:text-xl cursor-pointer hover:text-teal-200">
-                Explore More
-              </button>
+          <div className="relative">
+            <Image
+              src="/images/blog1.jpg"
+              width={800}
+              height={450}
+              alt="Blog Image"
+              className="rounded-lg w-full"
+              quality={100}
+            />
+            <p className="text-gray-500 mt-4">📅 27 Jan, 2024</p>
+            <p className="mt-5 font-mono text-lg md:text-xl text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus eget dolor non condimentum.
+              Mauris ac augue eu ex elementum dictum Quisque fermentum augue.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus eget dolor non condimentum.
+              Mauris ac augue eu ex elementum dictum Quisque fermentum augue.
+            </p>
+            <h1 className="font-bold mt-3 text-5xl">What Does it Work from Web?</h1>
+            <p className="mt-5 font-mono text-lg md:text-xl text-gray-400">Mauris pulvinar eros non dictum maximus. In at lacus scelerisque nisl maximus eleifend id ac libero. Integer interdum est hendrerit imperdiet condimentum. Pellentesque consectetur id purus ut tincidunt. Vestibulum turpis nisi, commodo quis ante a, commodo accumsan magna. Proin quis felis quis elit egestas molestie.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus vestibulum eleifend. Suspendisse potenti.</p>
+           
+          </div>
+          <div className="space-x-3">
+           <button className="bg-gray-200 p-4 hover:bg-teal-400 hover:text-white font-mono text-black mt-8 text-lg md:text-xl cursor-pointer  ml-96">
+              Previous
+            </button>
+            <button className="font-mono px-9 py-4 hover:bg-teal-400 hover:text-white bg-gray-200 text-black mt-8 text-lg md:text-xl cursor-pointer ">
+              Next
+            </button>
             </div>
-          ))}
+            <div>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
+
+            <div>
+                <CommentForm />
+            </div>
         </div>
 
         {/* Sidebar */}
@@ -104,6 +116,15 @@ export default function Blog() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="border border-gray-300 mt-4 px-5 py-5">
+            <h1 className="text-3xl font-semibold">Tags</h1>
+            <div className="mt-3 space-x-1 font-mono">
+            <p className="inline-block">Trading /</p>
+            <p className="inline-block"> Education /</p>
+            <p className="inline-block"> Statics /</p>
+            <p> Cooperate /</p>
+            </div>
           </div>
         </div>
       </div>

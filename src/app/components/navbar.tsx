@@ -67,13 +67,13 @@ export default function Navbar() {
                     </li>
                   ))}
                 {title === "Courses" &&
-                  ["Course A", "Course B", "Course C"].map((name, i) => (
+                  ["Course Style 1", "Course Style 2", "Course Detail"].map((name, i) => (
                     <li key={i} className="px-4 py-2 hover:bg-gray-200">
                       <Link href="/courses/a">{name}</Link>
                     </li>
                   ))}
                 {title === "Pages" &&
-                  ["About Us", "FAQ", "Contact"].map((name, i) => (
+                  ["Grid Blog", "Standard Blog", "Blog Detail", "Cart", "Checkout", "Login", "Register", "About", "Instructor", "404"].map((name, i) => (
                     <li key={i} className="px-4 py-2 hover:bg-gray-200">
                       <Link href={`/${name.toLowerCase().replace(" ", "")}`}>{name}</Link>
                     </li>
