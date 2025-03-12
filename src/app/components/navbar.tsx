@@ -8,11 +8,11 @@ import { LuMessageSquare } from "react-icons/lu";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 export default function Navbar() {
-  const [dropdown, setDropdown] = useState<string>(""); // 'any' hata kar 'string' use kiya
+  const [dropdown, setDropdown] = useState<string>(""); 
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-  let timeout: NodeJS.Timeout; // 'any' hata kar correct type de di
+  let timeout: NodeJS.Timeout;
 
-  const handleMouseEnter = (menu: string) => { // 'any' hata kar 'string' use kiya
+  const handleMouseEnter = (menu: string) => {
     clearTimeout(timeout);
     setDropdown(menu);
   };
@@ -40,9 +40,8 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div
-        className={`absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-300 ${
-          mobileMenuOpen ? "block shadow-lg" : "hidden md:flex"
-        }`}
+        className={`absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-300 
+          ${mobileMenuOpen ? "block shadow-lg z-50" : "hidden md:flex"}`}
       >
         <ul className="flex flex-col md:flex-row md:space-x-8 text-lg text-black">
           {["Home", "Courses", "Pages"].map((title, index) => (
@@ -55,10 +54,12 @@ export default function Navbar() {
               <span className="flex items-center py-3 md:py-0 px-4 md:px-0">
                 {title} <span className="ml-1">⌄</span>
               </span>
+
+              {/* Submenu */}
               <ul
-                className={`absolute left-0 top-full mt-2 w-40 bg-white border shadow-lg rounded-md transition-opacity duration-200 ${
-                  dropdown === title ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
+                className={`absolute left-0 top-full mt-2 w-48 bg-white border shadow-lg rounded-md transition-opacity duration-200 z-50
+                  ${dropdown === title ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+                style={{ backgroundColor: "white" }}
               >
                 {title === "Home" &&
                   ["Home One", "Home Two"].map((name, i) => (
@@ -69,7 +70,7 @@ export default function Navbar() {
                 {title === "Courses" &&
                   ["Course Style 1", "Course Style 2", "Course Detail"].map((name, i) => (
                     <li key={i} className="px-4 py-2 hover:bg-gray-200">
-                    <Link href={`/${name.toLowerCase().replace(" ", "")}`}>{name}</Link>
+                      <Link href={`/${name.toLowerCase().replace(" ", "")}`}>{name}</Link>
                     </li>
                   ))}
                 {title === "Pages" &&

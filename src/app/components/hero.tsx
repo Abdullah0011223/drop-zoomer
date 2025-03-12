@@ -70,29 +70,34 @@ export default function Hero() {
           className="rounded-3xl w-full max-w-sm md:max-w-lg"
         />
         
-        {/* Overlay Card 1 */}
-        <motion.div
-          className="absolute text-green-700 top-10 left-5 md:left-10 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={show ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <FaUserGraduate />
-          <h2 className="text-2xl font-bold">28k</h2>
-          <p className="text-green-700 text-sm">Total Students</p>
-        </motion.div>
+        {/* Overlay Cards Wrapper */}
+        <div className="absolute flex flex-col md:flex-row w-full justify-between px-6 md:px-12 -bottom-10 md:-bottom-16">
+          
+          {/* Overlay Card 1 */}
+          <motion.div
+            className="bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl text-green-700 w-32 md:w-40"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={show ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <FaUserGraduate />
+            <h2 className="text-2xl font-bold">28k</h2>
+            <p className="text-green-700 text-sm text-center">Total Students</p>
+          </motion.div>
 
-        {/* Overlay Card 2 */}
-        <motion.div
-          className="absolute text-green-700 right-5 md:right-10 bottom-10 bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={show ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <FaBookOpen />
-          <h2 className="text-2xl text-green-700 font-bold">529+</h2>
-          <p className="text-green-700 text-sm">Total Courses</p>
-        </motion.div>
+          {/* Overlay Card 2 */}
+          <motion.div
+            className="bg-white shadow-md px-6 py-4 rounded-lg flex flex-col items-center text-2xl text-green-700 w-32 md:w-40 mt-4 md:mt-0"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={show ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <FaBookOpen />
+            <h2 className="text-2xl text-green-700 font-bold">529+</h2>
+            <p className="text-green-700 text-sm text-center">Total Courses</p>
+          </motion.div>
+
+        </div>
       </div>
     </motion.section>
   );
