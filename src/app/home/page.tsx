@@ -2,13 +2,15 @@ import Image from "next/image";
 import React from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
-import Footer from "../components/footer";
+
 import Features from "../components/features";
 import AboutUs from "../components/about";
 import CourseCarousel from "../components/coursees";
-import ExploreCourses from "../components/explore";
-import ExpertInstructors from "../components/expert-instrutor";
+
+
 import ReviewCarousel from "../components/review";
+import ExpertInstructors1 from "../components/expert-instrutor";
+import Explore from "../components/explore";
 
 export default function Hero() {
   return (
@@ -60,10 +62,10 @@ export default function Hero() {
       <Features />
           <AboutUs />
           <CourseCarousel />
-          <ExploreCourses />
-          <ExpertInstructors />
+          <Explore />
+          <ExpertInstructors1 />
           <ReviewCarousel />
-    <Footer />
+     
     </div>
   );
 }

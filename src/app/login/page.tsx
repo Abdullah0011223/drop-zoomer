@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "../components/footer";
+
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ username: "", password: "", remember: false });
@@ -107,7 +107,7 @@ export default function LoginPage() {
       </div>
 
       {/* Footer */}
-      <Footer />
+     
     </div>
   );
 }

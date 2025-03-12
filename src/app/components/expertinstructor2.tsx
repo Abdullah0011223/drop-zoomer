@@ -13,28 +13,28 @@ const instructors = [
   },
   {
     name: "Munaim Billah",
-    role: "UI / UX Designer",
+    role: "Graphic Designer",
     students: "25+",
     courses: 32,
     image: "/images/instr2.png",
   },
   {
     name: "Motasim Billah",
-    role: "UI / UX Designer",
+    role: "Web Developer",
     students: "25+",
     courses: 32,
     image: "/images/instr3.png",
   },
   {
     name: "Ekram Hossain",
-    role: "UI / UX Designer",
+    role: "Wordpress Developer",
     students: "25+",
     courses: 32,
     image: "/images/instr4.png",
   },
 ];
 
-export default function ExpertInstructors1() {
+export default function ExpertInstructors2() {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-100 to-white">
       <div className="container mx-auto text-center px-4">
@@ -52,7 +52,7 @@ export default function ExpertInstructors1() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Our Expert Instructors
+          Our Expert Instructors Style 2
         </motion.h1>
 
         {/* Instructor Cards Grid */}
@@ -63,6 +63,20 @@ export default function ExpertInstructors1() {
               className="bg-white p-6 rounded-2xl shadow-xl text-center relative transition-all duration-300 hover:shadow-2xl backdrop-blur-md bg-opacity-80"
               whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
             >
+              {/* Animated Circular Border */}
+              <motion.div
+                className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-32 rounded-full border-4 border-teal-500 opacity-60"
+                animate={{
+                  rotate: [0, 360],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              ></motion.div>
+
               <div className="relative inline-block group">
                 {/* Instructor Image */}
                 <Image

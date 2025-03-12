@@ -1,7 +1,7 @@
 import Cart from "../components/cart";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/footer";
+
 
 export default function Card(){
     return(
@@ -25,7 +25,7 @@ export default function Card(){
                     </div>
                   </div>
             <Cart />
-            <Footer />
+           
         </div>
     )
 }

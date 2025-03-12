@@ -3,10 +3,10 @@ import Hero from "./components/hero";
 import Features from "./components/features";
 import AboutUs from "./components/about";
 import CourseCarousel from "./components/coursees";
-import ExploreCourses from "./components/explore";
-import ExpertInstructors from "./components/expert-instrutor";
 import ReviewCarousel from "./components/review";
-import Footer from "./components/footer";
+
+import ExpertInstructors1 from "./components/expert-instrutor";
+import Explore from "./components/explore";
 
 export default function Home() {
   return (
@@ -15,10 +15,10 @@ export default function Home() {
       <Features />
       <AboutUs />
       <CourseCarousel />
-      <ExploreCourses />
-      <ExpertInstructors />
+      <Explore />
+      <ExpertInstructors1 />
       <ReviewCarousel />
-      <Footer />
+     
     </div>
   );
 }

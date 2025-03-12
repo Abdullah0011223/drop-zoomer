@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link
  from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Footer from "../components/footer";
+
 // ✅ TypeScript Type Define Karo
 interface Blog {
   id: number;
@@ -118,7 +118,6 @@ export default function Blog() {
           <FaArrowRight className="mt-2" />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

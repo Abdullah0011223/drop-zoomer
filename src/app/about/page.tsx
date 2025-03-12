@@ -5,7 +5,7 @@ import Link from "next/link";
 import Features from "../components/features";
 import AboutUs from "../components/about";
 import ExpertInstructors from "../components/expert-instrutor";
-import Footer from "../components/footer";
+
 
 export default function Banner() {
   return (
@@ -47,7 +47,6 @@ export default function Banner() {
         <ExpertInstructors />
       </div>
 
-      <Footer />
     </div>
   );
 }

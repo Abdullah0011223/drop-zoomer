@@ -2,7 +2,7 @@ import Checkout from "../components/checkout";
 import Link from "next/link";
 import Image
     from "next/image";
-import Footer from "../components/footer";
+
 export default function check() {
     return (
         <div>
@@ -27,7 +27,7 @@ export default function check() {
             <div className="py-20">
                 <Checkout />
             </div>
-            <Footer />
+        
         </div>
     )
 }

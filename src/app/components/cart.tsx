@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
+import Link from "next/link";
 
 interface CartItem {
   id: number;
@@ -83,8 +84,10 @@ export default function Cart() {
             onChange={(e) => setCoupon(e.target.value)} 
             className="w-full border p-2 rounded-md mb-2"
           />
-          <button className="w-full bg-teal-500 text-white py-2 rounded-md mb-2">Apply Coupon</button>
-          <button className="w-full bg-green-500 text-white py-2 rounded-md">Proceed to Checkout</button>
+          <button className="w-full bg-teal-500 text-white py-2 rounded-md mb-2 cursor-pointer">Apply Coupon</button>
+          <Link href ="/checkout">
+          <button className="w-full bg-green-500 text-white py-2 rounded-md cursor-pointer">Proceed to Checkout</button>
+          </Link>
         </div>
       </div>
     </div>

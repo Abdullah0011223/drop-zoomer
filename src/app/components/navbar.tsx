@@ -69,7 +69,7 @@ export default function Navbar() {
                 {title === "Courses" &&
                   ["Course Style 1", "Course Style 2", "Course Detail"].map((name, i) => (
                     <li key={i} className="px-4 py-2 hover:bg-gray-200">
-                      <Link href="/courses/a">{name}</Link>
+                    <Link href={`/${name.toLowerCase().replace(" ", "")}`}>{name}</Link>
                     </li>
                   ))}
                 {title === "Pages" &&
@@ -92,11 +92,11 @@ export default function Navbar() {
 
       {/* Right Section */}
       <div className="hidden md:flex items-center space-x-6">
-        <button className="text-black hover:text-gray-700 text-2xl">
+        <button className="text-black hover:text-gray-700 text-2xl cursor-pointer">
           <CiSearch />
         </button>
         <div className="relative">
-          <button className="text-black hover:text-gray-700 text-2xl">
+          <button className="text-black hover:text-gray-700 text-xl cursor-pointer mt-1">
             <LuMessageSquare />
           </button>
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
@@ -105,7 +105,7 @@ export default function Navbar() {
         </div>
         <Link
           href="/login"
-          className="bg-teal-500 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-teal-400"
+          className="bg-teal-500 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-teal-400 ml-5 mb-3"
         >
           Login / Register
         </Link>
